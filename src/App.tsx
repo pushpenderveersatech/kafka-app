@@ -510,11 +510,11 @@ export default function KafkaInteractiveReact() {
                 <rect width="3" height="6" fill="#0f172a" />
               </pattern>
             </defs>
+            {/* Cluster frame */}
+            <rect x={8} y={8} width={width - 16} height={height - 16} rx={16} ry={16} fill="url(#diag)" stroke="#1f2937" />
+            {/* Move the label here so it's always on top */}
+            <text x={24} y={48} fontSize={16} fill="#94a3b8" fontWeight={700}>Kafka Cluster</text>
             <g ref={gRef}>
-              {/* Cluster frame */}
-              <rect x={8} y={8} width={width - 16} height={height - 16} rx={16} ry={16} fill="url(#diag)" stroke="#1f2937" />
-              <text x={24} y={28} fontSize={12} fill="#94a3b8">Kafka Cluster</text>
-
               {/* Brokers */}
               {layout.map(({ broker, x, y, w, h }) => (
                 <g key={broker.id} transform={`translate(${x + 12}, ${y + 20})`}>
