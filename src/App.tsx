@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import  { useEffect, useMemo, useRef, useState } from "react";
 import * as d3 from "d3";
 import { Crown, Server, AlertTriangle, RefreshCw, Crosshair, Send, Plus, Minus, Target, Layers } from "lucide-react";
 
@@ -278,7 +278,7 @@ export default function KafkaInteractiveReact() {
 
   function updateTopicSpec(idx: number, key: "name" | "partitions" | "replicationFactor", value: any) {
     setTopicsSpec((prev) => {
-      const next = prev.map((t, i) => ({ ...t }));
+      const next = prev.map((t) => ({ ...t }));
       // prevent invalid values
       if (key === "partitions" || key === "replicationFactor") {
         value = Math.max(1, parseInt(value || 1));
@@ -627,7 +627,7 @@ export default function KafkaInteractiveReact() {
                     </div>
                   </div>
                   <div className="mt-2 flex flex-wrap items-center gap-2">
-                    {g.members.map((m, idx) => (
+                    {g.members.map((m) => (
                       <span key={m.id} className="rounded-full border border-slate-700 bg-slate-800 px-2 py-0.5 text-xs">{m.id}</span>
                     ))}
                     <button className="inline-flex items-center gap-1 rounded-md border border-slate-700 bg-slate-900 px-2 py-1 text-xs" onClick={() => setGroups(prev => prev.map(gg => gg.id===g.id?{...gg, members:[...gg.members,{id:`c${gg.members.length+1}` }]}:gg))}><Plus size={12}/> add consumer</button>
