@@ -401,7 +401,7 @@ export default function KafkaInteractiveReact() {
     <div className="h-full w-full bg-[#0b1220] text-slate-200">
       {/* Controls */}
       <div className="flex flex-wrap items-center gap-3 border-b border-slate-800 p-3">
-        <div className="font-semibold text-slate-100">Kafka Interactive Diagram (React)</div>
+        <div className="font-semibold text-slate-100">Kafka Interactive Diagram (React) (Recommended Zoom Level: 50 to 80%)</div>
         <div className="ml-auto flex flex-wrap items-center gap-2">
           <label className="flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-2 py-1">
             <span className="text-xs opacity-80">Brokers</span>
